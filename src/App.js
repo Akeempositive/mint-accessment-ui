@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Route, withRouter,HashRouter} from 'react-router-dom';
-import VerifyCardPage from './pages/verify-card'
+import VerifyCardPage from './pages/verify-card';
 
 
 class App extends Component {
@@ -13,18 +13,15 @@ class App extends Component {
         };
     }
 
-    
-    
-
     render() {
 
         return (
 
             <HashRouter>
                 <Route exact path='/' component={VerifyCardPage} />
+                <Route exact path="/verify-card" component={VerifyCardPage} />
             </HashRouter>
         );
-
     }
 }
 

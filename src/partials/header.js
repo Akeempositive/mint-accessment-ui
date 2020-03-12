@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import {USER} from '../constants'
 import {
     Link,
     Redirect,
@@ -8,6 +9,10 @@ import {
 class Header extends Component  {
     constructor(props) {
         super(props);
+        this.state ={
+            user : {userName : 'User'}
+        }
+
     }
 
     onSubmitExperience = (e) => {
@@ -20,6 +25,7 @@ class Header extends Component  {
   render() {
 
     return (
+        /* <!-- Header--> */
         <header id="header" class="header">
 
             <div class="header-menu">
@@ -40,15 +46,15 @@ class Header extends Component  {
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar" /> {this.state.user.userName || ''}
                         </a>
                     </div>
                 </div>
             </div>
-
         </header>
     );
   }
 }
 
 export default Header;
+
+
