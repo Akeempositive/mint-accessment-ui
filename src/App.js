@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import {Route, withRouter,HashRouter} from 'react-router-dom';
+import VerifyCardPage from './pages/verify-card'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentUser: null,
+            isLoading: false
+        };
+    }
+
+    
+    
+
+    render() {
+
+        return (
+
+            <HashRouter>
+                <Route exact path='/' component={VerifyCardPage} />
+            </HashRouter>
+        );
+
+    }
 }
 
-export default App;
+export default withRouter(App);
